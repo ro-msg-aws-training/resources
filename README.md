@@ -1,2 +1,37 @@
-# resources
-Resource for AWS Training
+# AWS Training
+
+## Contents
+- Cloud Computing Intro
+- AWS Intro
+- AWS Services Overview
+- Infrastructure as Code
+- Regions and AZs
+- IAM
+  - Users
+  - Groups
+  - Roles
+- Security
+  - Security Groups
+  - Policies
+  - ACLs
+- Networking
+- EC2
+  - Instances
+  - Storage
+  - ASGs
+- RDS
+- Load Balancers
+- S3
+  - Object Storage
+  - Hosting
+  - CloudFront
+- SQS
+- SNS
+- Serverless Concepts
+- Lambda
+- DynamoDB
+- API Gateway
+- Cognito
+- Monitoring, Logging, Audit
+  - CloudWatch
+  - CloudTrail
