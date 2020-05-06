@@ -1,0 +1,13 @@
+{
+  "name": "aws-productive",
+  "description": "Get productive with AWS",
+  "authors": "Andrei Stefanie ",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress": "^1.4.1"
+  }
+}
