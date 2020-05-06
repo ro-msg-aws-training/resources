@@ -5,6 +5,7 @@ module.exports = {
   base: '/resources/',
   dest: 'docs',
   extraWatchFiles: ['.vuepress/config.js'],
+  lastUpdated: 'Last updated',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -21,10 +22,43 @@ module.exports = {
         link: 'https://github.com/ro-msg-spring-training/resources',
       },
     ],
-    sidebarDepth: 0,
     sidebar: [
-      ['/', 'Contents'],
-      ['/cloud', 'Cloud Intro'],
+      {
+        title: 'Contents',
+        path: '/',
+      },
+      {
+        title: 'Cloud Intro',
+        path: '/cloud/',
+      },
+      {
+        title: 'AWS Intro',
+        path: '/aws/',
+      },
+      {
+        title: 'AWS Services',
+        path: '/services/',
+      },
+      {
+        title: 'Infrastructure as Code',
+        path: '/iac/',
+      },
+      {
+        title: 'Regions and AZs',
+        path: '/infra/',
+      },
+      {
+        title: 'IAM',
+        path: '/iam/',
+        children: [
+          {
+            title: 'Users',
+            path: '/iam/users',
+          },
+          { title: 'Groups', path: '/iam/groups' },
+          { title: 'Roles', path: '/iam/roles' },
+        ],
+      },
     ],
   },
 };
