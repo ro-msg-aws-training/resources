@@ -2,7 +2,7 @@ module.exports = {
   title: 'Getting Productive with AWS',
   description:
     'The quickest way to be productive with Amazon Web Services. It covers the most used (by far) services and common architectures/patterns.',
-  base: '/docs/',
+  base: '/resources/docs/',
   dest: 'docs',
   extraWatchFiles: ['.vuepress/config.js'],
   themeConfig: {
