@@ -4,7 +4,7 @@ This training aims to be the quickest way to be productive with Amazon Web Servi
 
 # Contributing
 
-This training is written in (vuepress)[https://vuepress.vuejs.org/]. You can run it locally by cloning the repo and executing `npm run dev` (don't forget about `npm install`). You write in markdown and it will generate the corresponding html. Each covered AWS service has its own feature branch.
+This training is written in [vuepress](https://vuepress.vuejs.org/). You can run it locally by cloning the repo and executing `npm run dev` (don't forget about `npm install`). You write in markdown and it will generate the corresponding html. Each covered AWS service has its own feature branch.
 
 ## Contents
 
