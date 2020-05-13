@@ -10,5 +10,5 @@ For example in our case:
 - downloaded and sent you the generated credentials
 
 :::warning Exercise
-Do users expire?
+Do users expire? How about passwords?
 :::
