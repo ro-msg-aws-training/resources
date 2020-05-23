@@ -42,6 +42,10 @@ module.exports = {
       {
         title: 'Infrastructure as Code',
         path: '/iac/',
+        children: [
+          { title: 'Resources', path: '/iac/resources' },
+          { title: 'Parameters', path: '/iac/parameters' },
+        ],
       },
       {
         title: 'Regions and AZs',
