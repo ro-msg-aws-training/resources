@@ -57,6 +57,7 @@ module.exports = {
           },
           { title: 'Groups', path: '/iam/groups' },
           { title: 'Roles', path: '/iam/roles' },
+          { title: 'Hands-On', path: '/iam/hands_on' },
         ],
       },
     ],

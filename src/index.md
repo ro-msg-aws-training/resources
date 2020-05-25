@@ -38,8 +38,6 @@ A quick look on how AWS spans around the globe and why it's relevant for us.
 
 **I**dentity and **A**ccess **M**anagement - the central service for managing users/groups/roles.
 
----
-
 #### Users
 
 #### Groups
