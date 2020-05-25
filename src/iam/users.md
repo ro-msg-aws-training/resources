@@ -6,7 +6,7 @@ For example in our case:
 - authenticated using the root credentials
 - created an admin user (all permissions)
 - switched to that user
-- created your user and assigned the required permissions to interact with the VMs, DBs, logs and other services covered during thi training (by default a user cannot do anything)
+- created your user and assigned the required permissions to interact with the VMs, DBs, logs and other services covered during this training (by default a user cannot do anything)
 - downloaded and sent you the generated credentials
 
 :::warning Exercise
