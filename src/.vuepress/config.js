@@ -59,6 +59,18 @@ module.exports = {
           { title: 'Roles', path: '/iam/roles' },
         ],
       },
+      {
+        title: 'Security',
+        path: '/security/',
+        children: [
+          {
+            title: 'Security Groups',
+            path: '/security/groups',
+          },
+          { title: 'Policies', path: '/security/policies' },
+          { title: 'Access Control Lists', path: '/security/acls' },
+        ],
+      },
     ],
   },
 };
