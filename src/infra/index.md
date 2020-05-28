@@ -7,3 +7,7 @@ The AWS cloud is actually several independant clouds running in different **regi
 Additionally, each region consists of several **availability zones (AZs)**. When you run a service, most of the times you run it in a specific availability zone. You can think of them as separate data centers, even though an AZ can contain multiple data centers. An example of AZ is **eu-west-1a**.
 
 Check out [this](https://www.infrastructure.aws/) cool interactive map to get a clearer picture. Of course, you can always check the [official website](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/).
+
+:::warning Exercise
+Identify at least 3 benefits of being able to choose the region where our systems run (and data resides). 
+:::
