@@ -24,7 +24,7 @@ A quick overview of the most relevant AWS services.
 
 ### Infrastructure as Code
 
-The motivation behind Infrastructure as Code (**IaC**) and a quick tutorial.
+The motivation behind Infrastructure as Code (**IaC**).
 
 ---
 
