@@ -42,10 +42,6 @@ module.exports = {
       {
         title: 'Infrastructure as Code',
         path: '/iac/',
-        children: [
-          { title: 'Resources', path: '/iac/resources' },
-          { title: 'Parameters', path: '/iac/parameters' },
-        ],
       },
       {
         title: 'Regions and AZs',
@@ -54,15 +50,6 @@ module.exports = {
       {
         title: 'IAM',
         path: '/iam/',
-        children: [
-          {
-            title: 'Users',
-            path: '/iam/users',
-          },
-          { title: 'Groups', path: '/iam/groups' },
-          { title: 'Roles', path: '/iam/roles' },
-          { title: 'Hands-On', path: '/iam/hands_on' },
-        ],
       },
     ],
   },
