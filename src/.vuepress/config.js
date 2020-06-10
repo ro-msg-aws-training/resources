@@ -51,6 +51,10 @@ module.exports = {
         title: 'IAM',
         path: '/iam/',
       },
+      {
+        title: 'Security',
+        path: '/security/',
+      },
     ],
   },
 };

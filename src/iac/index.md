@@ -63,7 +63,7 @@ Resources:
 
 ## Mappings & Conditions
 
-If parameters are intended for customizing based on outside/user (developer) input, mappings and conditions are used to customize the resulting stack based on other factors, for example the region where the stack is being launched. They can also be used together with parameters since it is possible to define the allowed values for each parameters (i.e. have a drop-down list). A nice example of using mappings and conditions can be found [here](https://www.singlestoneconsulting.com/blog/cloudformation-mapping-and-conditionals-making-your-templates-more-universal/).
+If parameters are intended for customizing based on outside/user (developer) input, mappings and conditions are used to customize the resulting stack based on other factors, for example the region where the stack is being launched. They can also be used together with parameters since it is possible to define the allowed values for each parameters (e.g. the AllowedValues from above). A nice example of using mappings and conditions can be found [here](https://www.singlestoneconsulting.com/blog/cloudformation-mapping-and-conditionals-making-your-templates-more-universal/).
 
 ## Outputs
 
