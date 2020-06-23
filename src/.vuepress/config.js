@@ -55,6 +55,10 @@ module.exports = {
         title: 'Security',
         path: '/security/',
       },
+      {
+        title: 'Networking',
+        path: '/networking/',
+      },
     ],
   },
 };

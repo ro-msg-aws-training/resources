@@ -48,7 +48,7 @@ Let's take a quick glance at the IAM service. For this, open the AWS console and
 
 Let's try to create a new user.
 
-- Go to the **Users** page and press the blue button (usually in the AWS console the blue button does the thing that you want).
+- Go to the **Users** page and press the blue button (usually in the AWS console the blue button does the thing that you want - recently AWS started revamping their UI. The new main button color is orange).
 - Give your user a meaningful name (e.g. append '-practice' to your current user).
 - Give it access to both the API and the console (you can leave the default password settings).
 - Going to the next step, the permissions of your new user, you can see the various ways to set them. Choose the Training group and go to the next step.
