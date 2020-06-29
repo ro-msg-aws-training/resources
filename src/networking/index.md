@@ -59,6 +59,8 @@ For creating and managing networks, AWS provides the **VPC** (Virtual Private Cl
 
 **Instances are deployed in a specific subnet. This is how we choose in which AZ to run our instance and whether the instance has a public IP address or not. Each subnet has a route table assigned which tells instances where to find other IPs. A subnet is considered public if it has a route to an Internet Gateway (another AWS resource). Furthermore, each subnet has its own NACL.**
 
+In general, we deploy instances in private subnets and expose them through a Load Balancer (which is deployed in public subnets). In case we still want access to the internet from our instances, we can setup a **NAT Gateway** and point the instances to it.
+
 :::warning Exercise
 Navigate to the VPC service and take a look at the default VPC. How many subnets does it have and how many of them are public? Does it restrict traffic with any IP?
 :::
