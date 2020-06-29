@@ -50,3 +50,15 @@ Routing simply means figuring out how to reach a certain IP address. Here we com
 Considering our company example from above, our internet service provider might give us only one IP address. Since we still want internet access from all of our devices, we need a way to send data (packets) from a device through that single IP address and to receive data through the same IP address and forward it to the right device (the device that requested the data).
 
 That's all NAT is - a way to communicate over the internet without assigning a unique public IP address to each device of a given network.
+
+## AWS
+
+When it comes to AWS, our instances will have **private dynamic** IP addresses and, optionally (based on how our network is configured), public IP addresses. We can choose to assign a static public IP address by using an [Elastic IP Address](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) (we won't).
+
+For creating and managing networks, AWS provides the **VPC** (Virtual Private Cloud) service (it is also the name of resulting resource). A VPC is an isolated section of the entire AWS cloud network spanning a certain region. Then, a VPC is divided into one or more subnets which are created in a specific AZ (taking a specific IP range/CIDR of the VPC).
+
+**Instances are deployed in a specific subnet. This is how we choose in which AZ to run our instance and whether the instance has a public IP address or not. Each subnet has a route table assigned which tells instances where to find other IPs. A subnet is considered public if it has a route to an Internet Gateway (another AWS resource). Furthermore, each subnet has its own NACL.**
+
+:::warning Exercise
+Navigate to the VPC service and take a look at the default VPC. How many subnets does it have and how many of them are public? Does it restrict traffic with any IP?
+:::
