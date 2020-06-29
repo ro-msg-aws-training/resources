@@ -59,6 +59,10 @@ module.exports = {
         title: 'Networking',
         path: '/networking/',
       },
+      {
+        title: 'Elastic Compute Cloud',
+        path: '/ec2/',
+      },
     ],
   },
 };
