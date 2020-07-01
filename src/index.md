@@ -76,13 +76,11 @@ We will take a look at a few instance types and families.
 
 #### ASGs
 
+#### Load Balancers
+
 ---
 
 ### RDS
-
----
-
-### Load Balancers
 
 ---
 

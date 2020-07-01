@@ -53,7 +53,7 @@ That's all NAT is - a way to communicate over the internet without assigning a u
 
 ## AWS
 
-When it comes to AWS, our instances will have **private dynamic** IP addresses and, optionally (based on how our network is configured), public IP addresses. We can choose to assign a static public IP address by using an [Elastic IP Address](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) (we won't, but it can be helpful when you need just a simple server).
+When it comes to AWS, our instances will have **private static** IP addresses and, optionally (based on how our network is configured), public IP addresses. We can choose to assign a static public IP address by using an [Elastic IP Address](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) (we won't, but it can be helpful when you need just a simple server).
 
 For creating and managing networks, AWS provides the **VPC** (Virtual Private Cloud) service (it is also the name of resulting resource). A VPC is an isolated section of the entire AWS cloud network spanning a certain region. Then, a VPC is divided into one or more subnets which are created in a specific AZ (taking a specific IP range/CIDR of the VPC).
 

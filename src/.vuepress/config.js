@@ -18,6 +18,10 @@ module.exports = {
         link: 'https://github.com/ro-msg-react-training/resources',
       },
       {
+        text: 'Angular Training',
+        link: 'https://github.com/ro-msg-angular-training/resources',
+      },
+      {
         text: 'Spring Training',
         link: 'https://github.com/ro-msg-spring-training/resources',
       },
@@ -60,7 +64,7 @@ module.exports = {
         path: '/networking/',
       },
       {
-        title: 'Elastic Compute Cloud',
+        title: 'EC2',
         path: '/ec2/',
       },
     ],
