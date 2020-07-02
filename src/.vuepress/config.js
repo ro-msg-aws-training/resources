@@ -67,6 +67,10 @@ module.exports = {
         title: 'EC2',
         path: '/ec2/',
       },
+      {
+        title: 'RDS',
+        path: '/rds/',
+      },
     ],
   },
 };

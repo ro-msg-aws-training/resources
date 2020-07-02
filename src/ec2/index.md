@@ -44,6 +44,14 @@ An instance is basically just some virtual CPU and memory. If we want to do anyt
 - Instance Store - Blazing fast storage that is phisically attached to the host running the instance. It is intended only for temporary storage (**ephemeral** storage).
 - **EFS** - You can see as a network attached storage. Multiple instances from multiple AZs can connect to it (the connection is handled by an ENI).
 
+## User Data and AMIs
+
+Whenever you launch an EC2 instance, you get a bare VM (it only has the OS and some other common tools installed). Of course, you can always ssh into the instance and setup your application and the other tools you need.
+
+Even better, you can use **User Data**. It allows you to specify what to do when creating the instance (e.g. install nginx).
+
+Once your machine is in the state that you want, you can create an **AMI** (Amazon Machine Image) from it which then can be used to create other identical instances without waiting for the initial installation. This is usually referred to as the Golden AMI.
+
 ## Auto Scaling Groups
 
 They can be seen as managers of your instances. You tell them what kind of instance you want and how many, and the ASG handles the rest. In practice, it is always recommended to use auto scaling groups even if you have just one instance.
@@ -56,8 +64,36 @@ The load balancer is usually the service that exposes our servers. We configure 
 - **Network** - You can look at it like at a (very sophisticated) network router. While the ALB operates at layer 7 (HTTP, Websockets) of the [OSI model](https://en.wikipedia.org/wiki/OSI_model), the NLB handles traffic at layer 4 (TCP/UDP) thus working with packets. You loose some features of the ALB, but gain massive performance (**and scalability**) and the request looks like it came directly from the original client. Also, interestingly enough, it is (slightly) cheaper than an ALB (mostly because you have to configure it more).
 - There is a third option, classic, but it's deprecated.
 
+ELBs offer tons of features which are great, but we won't go over them since setting up an ELB is such a rare task. However here are a few aspects to keep in mind:
+
+- The ELB offers a static DNS name that you are supposed to use (as opposed to an IP address).
+- It can be internet facing or internal (we might need load balancing between various tiers or services of our system).
+- The ELB can check the health of your instances and forward the traffic only if the instance seems to be running (in practice, your application would have an endpoint responsible for responding to health checks - only the status code of the response is relevant, usually HTTP 200).
+- In case of an ALB, you can route traffic to different targets based on several URL components such as the hostname (_**a**.example.com_), path (_example.com/**a**_) and query strings (_example.com?**service=a**_).
+- If, for some reason, requests must go to exactly the same instance, you can use sticky session (it shouldn't happen).
+
+If you want to get a better understanding of how to setup up a load balancer, you can follow the [getting started guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) and, for an event deeper understanding, you can go through some [examples](https://exampleloadbalancer.com/).
+
+## Architecture Samples
+
+The simplest architecture (that still follows some principles) is the following:
+
+![Simple EC2 Architecture](./simple_arch.png)
+
+In many cases this might be enough. However, if we wanted make our system highly available (i.e. reduce the chance it goes down due to various reasons) and/or improve its scalability (**horizontal scalability**), our architecture might look like the following image:
+
+![Highly Available Architecture](./ha_arch.png)
+
+:::warning Question 1
+How would you compare the architectures from a networking perspective? What is different?
+:::
+
+:::warning Question 2
+Do you see any potential issue with our second architecture? (Think from a functional point of view)
+:::
+
 :::warning Exercise
-Your task is to get an application running on your own EC2 instance. If you completed the [spring training](https://github.com/ro-msg-spring-training/resources), you can try with that (you might have install additional software like the jdk or the RDMS).
+Your task is to get a web application running on your own EC2 instance while following the simple architecture from above. If you completed the [spring training](https://github.com/ro-msg-spring-training/resources), you can try with that (you might have install additional software like the jdk or the RDMS). The aim is to be able to call your application from your browser/postman.
 
 Tips: use git to pull the source code, use the connect button from the AWS console (you don't need to worry about the keypair - launch the instance without it) to ssh into your instance, don't forget about the security group for ssh and the port of your application.
 

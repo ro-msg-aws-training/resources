@@ -70,8 +70,6 @@ AWS's service for running virtual machines (**VM**s) in the cloud.
 
 #### Instances
 
-We will take a look at a few instance types and families.
-
 #### Storage
 
 #### ASGs
