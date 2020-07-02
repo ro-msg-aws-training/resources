@@ -74,4 +74,4 @@ The primary usage of the outputs is to act as the input of another template. Of 
 
 ## Further Exercise
 
-As mentioned above, there is also the CDK option. In practice, CloudFormation templates tend to get quite large and hard to maintain, reason for which we recommend using the CDK (it can be quite an enjoyable experience). Once you've got a feeling of the other services (especially serverless ones), tryout the [CDK Workshop](https://cdkworkshop.com/15-prerequisites.html) (we recommend the TypeScript flavour).
+**[Level 200]** As mentioned above, there is also the CDK option. In practice, CloudFormation templates tend to get quite large and hard to maintain, reason for which we recommend using the CDK (it can be quite an enjoyable experience). Once you've got a feeling of the other services (especially serverless ones), tryout the [CDK Workshop](https://cdkworkshop.com/15-prerequisites.html) (we recommend the TypeScript flavour).

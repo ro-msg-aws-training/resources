@@ -10,4 +10,10 @@ Our architecture would look like this:
 
 ![Highly Available Architecture with RDS](./rds_arch.png)
 
-For a complete tutorial on how to setup an RDS instance and a webserver which connects to it together with all the networking and security that is involved, you can check [this one](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/TUT_WebAppWithRDS.html) (**use t2.micro instead of the suggested t2.small to stay in the free tier**).
+:::warning Exercise
+**[Level 250]** For a complete tutorial on how to setup an RDS instance and a webserver which connects to it together with all the networking and security that it involves, you can check [this one](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/TUT_WebAppWithRDS.html) (**use t2.micro instead of the suggested t2.small to stay in the free tier**).
+:::
+
+:::warning Exercise
+**[Level 300]** Describe the previously created infrastructure using CDK. You can google some examples or you can take a look at the CDK documentation for [EC2](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-ec2-readme.html) and [RDS](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-rds-readme.html).
+:::

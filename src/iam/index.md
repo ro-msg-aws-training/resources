@@ -42,6 +42,8 @@ Why are roles a better approach than users to provide permissions to your applic
 
 ## Hands-On
 
+**[Level 200]**
+
 Let's take a quick glance at the IAM service. For this, open the AWS console and go to the IAM service. You should be able to see the users, groups and roles (besides the rest of the stuff).
 
 ### Creating a New User
@@ -52,7 +54,7 @@ Let's try to create a new user.
 - Give your user a meaningful name (e.g. append '-practice' to your current user).
 - Give it access to both the API and the console (you can leave the default password settings).
 - Going to the next step, the permissions of your new user, you can see the various ways to set them. Choose the Training group and go to the next step.
-- Tag your user with **project: CareerStart** and go to the next step.
+- Tag your user with **project: aws-training** and go to the next step.
 - Click the blue button.
 
 ---

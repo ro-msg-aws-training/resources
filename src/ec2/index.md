@@ -93,7 +93,7 @@ Do you see any potential issue with our second architecture? (Think from a funct
 :::
 
 :::warning Exercise
-Your task is to get a web application running on your own EC2 instance while following the simple architecture from above. If you completed the [spring training](https://github.com/ro-msg-spring-training/resources), you can try with that (you might have install additional software like the jdk or the RDMS). The aim is to be able to call your application from your browser/postman.
+**[Level 200]** Your task is to get a web application running on your own EC2 instance while following the simple architecture from above. If you completed the [spring training](https://github.com/ro-msg-spring-training/resources), you can try with that (you might have install additional software like the jdk or the RDMS). The aim is to be able to call your application from your browser/postman.
 
 Tips: use git to pull the source code, use the connect button from the AWS console (you don't need to worry about the keypair - launch the instance without it) to ssh into your instance, don't forget about the security group for ssh and the port of your application.
 

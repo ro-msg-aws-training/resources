@@ -28,7 +28,7 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: 'Contents',
+        title: 'Preface',
         path: '/',
       },
       {
