@@ -22,6 +22,10 @@ These are intended mostly to provide guidance based on what you are looking to u
 
 If no level is specified, it is 100.
 
+**In addition to the information specified here or linked to from here, you can always check the [AWS FAQ of any service](https://aws.amazon.com/faqs/). It usually goes into great detail and is self contained.**
+
+**Also, before proceeding to develop your product, consult the [AWS reference architectures](https://aws.amazon.com/architecture/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc&reference-architecture.sort-by=item.additionalFields.sortDate&reference-architecture.sort-order=desc).**
+
 ## Contents
 
 ### Cloud Intro
@@ -112,11 +116,13 @@ AWS's service for running virtual machines (**VM**s) in the cloud.
 
 ---
 
-### SQS
+### Integration Services
 
----
+#### SQS
 
-### SNS
+#### SNS
+
+#### Kinesis
 
 ---
 

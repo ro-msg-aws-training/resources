@@ -71,6 +71,10 @@ module.exports = {
         title: 'RDS',
         path: '/rds/',
       },
+      {
+        title: 'S3',
+        path: '/s3/',
+      },
     ],
   },
 };

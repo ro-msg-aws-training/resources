@@ -40,6 +40,8 @@ Roles do not respresent an entity, but they can be assumed by an entity. You can
 Why are roles a better approach than users to provide permissions to your application?
 :::
 
+**Another important topic related to IAM are policies. We will discuss them in the security chapter.**
+
 ## Hands-On
 
 **[Level 200]**
@@ -73,4 +75,9 @@ You (your user) are not authorized to create new users (or any other IAM resourc
 - In the role field type iam-admin
 - Feel free to change the display name and color.
 - Switch to the new role.
+- (You don't have to follow the steps from above since we won't use the new user anyway)
 - When you are done with the special task, you should go back to your user. (top-right menu again)
+
+:::warning Extra
+**[Level 200]** If you find yourself having to manage the IAM for your project, see [this video](https://www.youtube.com/watch?v=Zvz-qYYhvMk). It goes over some basic concepts, how authorization works, how policies work and some patterns.
+:::

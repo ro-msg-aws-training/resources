@@ -99,3 +99,7 @@ Tips: use git to pull the source code, use the connect button from the AWS conso
 
 Feel free to consult the [AWS Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html).
 :::
+
+:::warning Extra
+**[Level 200]** Checkout [this video](https://www.youtube.com/watch?v=kMMybKqC2Y0) for a summary of most features that are part of EC2.
+:::
