@@ -19,3 +19,5 @@
 
 - Basically an append-only file
 - Somewhat similar to SQS, can be used for same purposes, can be considerably cheaper, but requires more setup.
+
+**[Level 300] Checkout [this video](https://www.youtube.com/watch?v=4-JmX6MIDDI) on how to choose the right service(s).**

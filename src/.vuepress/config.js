@@ -75,6 +75,14 @@ module.exports = {
         title: 'S3',
         path: '/s3/',
       },
+      {
+        title: 'Integration',
+        path: '/integration/',
+      },
+      {
+        title: 'Serverless',
+        path: '/serverless/',
+      },
     ],
   },
 };
