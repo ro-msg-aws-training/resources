@@ -11,7 +11,7 @@ An IP address is an identifier issued to each device connected to a network. Can
 - 172.16.0.0 – 172.31.255.255
 - 192.168.0.0 – 192.168.255.255
 
-Private means that an IP address is valid (exists only once) only within the given network (i.e. not the whole internet). This means that we can have the same private IP in different networks withput having collisions.
+Private means that an IP address is valid (exists only once) only within the given network (i.e. not the whole internet). This means that we can have the same private IP in different networks without having collisions.
 
 On the other hand, a public IP address is unique across the whole internet. Its value is in the ranges outside of the private ranges (and some other reserved ranges).
 
@@ -22,7 +22,7 @@ Another important characteristic of IP addresses is that they can be static and 
 - **Static** - The device is guaranteed to have the same IP address.
 - **Dynamic** - The device is **not** guaranteed (and very unlikely) to have the same IP address.
 
-Static means more work than dynamic because someone has to actually configure and reserve it, whereas the dynamic address is assigned automatically by an DHCP.
+Static means more work than dynamic because someone has to actually configure and reserve it, whereas the dynamic address is assigned automatically by a DHCP.
 
 And finally, there are the 2 versions of IP addresses:
 
@@ -33,7 +33,7 @@ We will work with **IPv4**.
 
 ## **Subnets**
 
-When we create a network, for example, a company could have a single network, we might decide to divide it into several subnetworks - one subnetwork for each department of the company. Even if we decide to create multiple subnets, each device must still be assigned an unique IP address across the whole network. This means that each subnet must take a distinct range of IPs.
+When we create a network, for example, a company could have a single network, we might decide to divide it into several subnetworks - one subnetwork for each department of the company. Even if we decide to create multiple subnets, each device must still be assigned a unique IP address across the whole network. This means that each subnet must take a distinct range of IPs.
 
 While we can refer to a range by its interval, we usually identify it by using the **CIDR** notation. For example, the interval **172.16.0.0 – 172.16.255.255** is represented using CIDR as **127.16.0.0/16**. The **/16** tells us how many bits (out of **32**) identify the network - in this case we know that 127.16 (the first 16 bits) will be the same for all devices part of the same (sub)network.
 
@@ -55,7 +55,7 @@ That's all NAT is - a way to communicate over the internet without assigning a u
 
 When it comes to AWS, our instances will have **private static** IP addresses and, optionally (based on how our network is configured), public IP addresses. We can choose to assign a static public IP address by using an [Elastic IP Address](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) (we won't, but it can be helpful when you need just a simple server).
 
-For creating and managing networks, AWS provides the **VPC** (Virtual Private Cloud) service (it is also the name of resulting resource). A VPC is an isolated section of the entire AWS cloud network spanning a certain region. Then, a VPC is divided into one or more subnets which are created in a specific AZ (taking a specific IP range/CIDR of the VPC).
+For creating and managing networks, AWS provides the **VPC** (Virtual Private Cloud) service (it is also the name of the resulting resource). A VPC is an isolated section of the entire AWS cloud network spanning a certain region. Then, a VPC is divided into one or more subnets which are created in a specific AZ (taking a specific IP range/CIDR of the VPC).
 
 **Instances are deployed in a specific subnet. This is how we choose in which AZ to run our instance and whether the instance has a public IP address or not. Each subnet has a route table assigned which tells instances where to find other IPs. A subnet is considered public if it has a route to an Internet Gateway (another AWS resource). Furthermore, each subnet has its own NACL.**
 

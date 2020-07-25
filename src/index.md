@@ -4,11 +4,11 @@ _This training aims to be the quickest way to be productive with Amazon Web Serv
 
 ## Who is this for?
 
-This training is aimed for anyone working or looking to start working with AWS (or even cloud in general). It tackles beginner and intermmediat topics and it links to other curated resources that provide deeper explanations.
+This training is intended for anyone working or looking to start working with AWS (or even cloud in general). It tackles beginner and intermediate topics and it links to other curated resources that provide deeper explanations.
 
 ## Working Mode
 
-One of the most important factors when working with AWS is knowing what can be done and which services to choose. We will go through the most commonly used services and get a feeling how and when to use them. For some of the topics you will be asked to do some extra research on your own in order to answer certain questions (designed to ease the understanding process). Moreover, we will go through some hands-on exercises and tutorials.
+One of the most important factors when working with AWS is knowing what can be done and which services to choose. We will go through the most commonly used services and get a feeling of regarding how and when to use them. For some of the topics, you will be asked to do some extra research on your own in order to answer certain questions (designed to ease the understanding process). Moreover, we will go through some hands-on exercises and tutorials.
 
 This training is not intended to be standalone. It acts as a hub of resources while providing certain explanations and use-cases based on our experience.
 
@@ -22,7 +22,7 @@ These are intended mostly to provide guidance based on what you are looking to u
 
 If no level is specified, it is 100.
 
-**In addition to the information specified here or linked to from here, you can always check the [AWS FAQ of any service](https://aws.amazon.com/faqs/). It usually goes into great detail and is self contained.**
+**In addition to the information specified here or linked to from here, you can always check the [AWS FAQ of any service](https://aws.amazon.com/faqs/). It usually goes into great detail and is self-contained**
 
 **Also, before proceeding to develop your product, consult the [AWS reference architectures](https://aws.amazon.com/architecture/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc&reference-architecture.sort-by=item.additionalFields.sortDate&reference-architecture.sort-order=desc).**
 

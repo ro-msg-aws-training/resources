@@ -6,7 +6,7 @@ First of all, what really is security (in IT)? In simple terms it refers to the 
 
 - **Confidentiality**: only the authorized entities (people and/or systems) have access to the data.
 - **Integrity**: only the authorized entities can modify the data through well-defined procedures.
-- **Availability**: there is no point in having a well guarded system if no one can use it. Also, earthquakes tend to overrule highly sophisticated security measures.
+- **Availability**: there is no point in having a well-guarded system if no one can use it. Also, earthquakes tend to overrule highly sophisticated security measures.
 
 Before we jump into the AWS services, remember that **systems must be secure by design**. This means that we cannot just design a system that performs the tasks that we want and hope to make it secure after. We must consider from the beginning aspects like authentication (who is the user), authorization (what the user can do), communication between various components (e.g. only our application should be able to access our database) and which data should be public and which must be private and accessible only to certain users.
 
@@ -14,7 +14,7 @@ In this chapter we will focus mainly on controlling the access to our systems by
 
 ## Policies
 
-This term was mentioned briefly in the IAM chapter as the way permissions are set for the IAM identities. At a high level, policies are documents (json) describing what an entity can or cannot do. There are 2 main types of policies (these are the most relevant for developers):
+This term was mentioned briefly in the IAM chapter as the way permissions are set for the IAM identities. At a high level, policies are documents (JSON) describing what an entity can or cannot do. There are 2 main types of policies (these are the most relevant for developers):
 
 - **Identity-based**: what we used at the previous chapter. They specify what the entity having it attached can do.
 - **Resource-based**: they are attached to resources (most commonly to S3 buckets) and describe who/what has access to it and to what extent - the who/what is called the principal.
@@ -33,15 +33,15 @@ You can think of a security group as a firewall that can be attached to almost a
 
 You can use security groups to restrict network access based on the following properties:
 
-- **IP**: you can allow traffic only for certain ip addresses. For example, this is helpful if you have a server outside of AWS with a static IP.
-- **CIDR**: similar to the previous option, but it applies to a range of ip addresses. (we will discuss about CIDR in the networking chapter).
+- **IP**: you can allow traffic only for certain IP addresses. For example, this is helpful if you have a server outside of AWS with a static IP.
+- **CIDR**: similar to the previous option, but it applies to a range of IP addresses. (we will discuss about CIDR in the networking chapter).
 - **Security Group**: the first 2 options are definitely helpful, but they are also somewhat rigid. Using this option, you can limit the access to only components that have a certain security group attached. For example, if our application runs on some VMs (with a certain security group) and we have a separate VM hosting our database, we can specify in the security group of the DB VM that only our application VMs can access it.
 
 By default, a security group blocks all inbound traffic (e.g. you cannot connect to your server) and allows all outbound traffic (e.g. your server can check for update). When creating the security group, you will **whitelist** certain sources like the IP address of your computer through the SSH **protocol** on **port** 22 (this is the usual port for SSH) (SSH basically allows a terminal on our computer to execute commands on the VM).
 
 Another important aspect to remember is that security groups are stateful. In this context, stateful means that we don't have to specifically allow traffic for both inbound and outbound. For example, if your security group doesn't allow any inbound traffic, but allows all outbound traffic, your instance can still download software updates even though this is inbound traffic (but the request for the updates was initiated by your instance).
 
-Also a small tip, timeouts usually indicate security groups issues.
+Also a small tip, timeouts usually indicate security group issues.
 
 :::warning Exercise
 How should we configure our security group if our instance is supposed to be an application serving traffic through standard HTTP and HTTPS?

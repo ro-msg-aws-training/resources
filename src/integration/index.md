@@ -6,7 +6,7 @@
 - First AWS service (2006).
 - One common use case is to avoid overwhelming the servers. Instead of sending all the requests to the servers, put them in a queue and let the servers process them at their own rate.
 - Another important benefit is the retention - in case the server is down, the request is not lost.
-- Intended for one type of producers and one type of consumers.
+- Intended for one type of producer and one type of consumer.
 - Intended for small messages (up to 256kb).
 - No way to pick a certain message.
 - No guaranteed ordering.
@@ -34,13 +34,13 @@
 ## Kinesis
 
 - Basically an append-only file.
-- Somewhat similar to SQS, can be used for same purposes, can be considerably cheaper, but requires more setup.
+- Somewhat similar to SQS, can be used for the same purposes, can be considerably cheaper, but requires more setup.
 - Usually used for large streams of data (e.g. IoT, clickstreams, logs).
 - AWS alternative to Apache Kafka (however, can store data permanently).
 - There are several Kinesis service, but we usually refer to Kinesis Data Streams. See all variants [here](https://docs.aws.amazon.com/kinesis/?id=docs_gateway).
-- Unlike SQS, with Kinesis you have to provision capacity (**shards**). One shard can handle writting 1MB/s or 1000 messages/s and reading 2MB/s.
+- Unlike SQS, with Kinesis you have to provision capacity (**shards**). One shard can handle writing 1MB/s or 1000 messages/s and reading 2MB/s.
 - Records are ordered per shard.
-- Number of shards can be adjusted.
+- The number of shards can be adjusted.
 - Works with partition keys. It determines in which shard the record goes (based on the hash of the key). The partition keys should be distributed (to distribute the load across shards).
 - For consuming, it is recommended to use KCL (Kinesis Client Library).
 - [Level 250] More info [here](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).

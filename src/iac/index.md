@@ -2,7 +2,7 @@
 
 When you interact with the cloud providers for the first time, you will most likely use the web interface to provision and setup the infrastructure (e.g. launch a VM). This is a good option at the beginning since it helps you to get used to the available services and what options they offer (e.g. you see a nice list with the available AMIs and instance types when launching an EC2 instance).
 
-While it might be fun for the first few times, it will become just some other repetitive and time-consuming task (and overhead) as the time goes by. Additionally, manual work always imposes the risk of human error (we might forget to tick some checkbox or miss-click some instance type). Large projects can quickly add up to tens of thousands of infrastructure resources that have to be configured and provisioned.
+While it might be fun for the first few times, it will become just some other repetitive and time-consuming task (and overhead) as time goes by. Additionally, manual work always imposes the risk of human error (we might forget to tick some checkbox or miss-click some instance type). Large projects can quickly add up to tens of thousands of infrastructure resources that have to be configured and provisioned.
 
 These issues can be addressed by being able to declare/write the infrastructure in some text files and have cloud platforms interpret the files and automatically setup the required infrastructure for us or, in other words, infrastructure as code.
 
@@ -35,7 +35,7 @@ Resources:
 
 ## Parameters
 
-Most projects have different environments (dev, staging, prod etc.). While the services used to compose these environments might be the same (they should be), the amount of resources is not necessarily the same. One of the most important factors when building systems is the cost optimization (this is also one of the 5 pillars of the [Well-Architected Framework](https://wa.aws.amazon.com/wat.pillars.wa-pillars.en.html) proposed by AWS). In case of a production environment we need a certain amount of resources (to handle our users) while for the development environment, most of the times, we will need much less resources, for example smaller ec2 instances.
+Most projects have different environments (dev, staging, prod etc.). While the services used to compose these environments might be the same (they should be), the amount of resources is not necessarily the same. One of the most important factors when building systems is cost optimization (this is also one of the 5 pillars of the [Well-Architected Framework](https://wa.aws.amazon.com/wat.pillars.wa-pillars.en.html) proposed by AWS). In case of a production environment we need a certain amount of resources (to handle our users) while for the development environment, most of the times, we will need much fewer resources, for example, smaller ec2 instances.
 
 We could, of course, have separate templates for each environment or we could leverage **parameters** to customize the resulting stack based on the same template.
 
@@ -74,4 +74,4 @@ The primary usage of the outputs is to act as the input of another template. Of 
 
 ## Further Exercise
 
-**[Level 200]** As mentioned above, there is also the CDK option. In practice, CloudFormation templates tend to get quite large and hard to maintain, reason for which we recommend using the CDK (it can be quite an enjoyable experience). Once you've got a feeling of the other services (especially serverless ones), tryout the [CDK Workshop](https://cdkworkshop.com/15-prerequisites.html) (we recommend the TypeScript flavour).
+**[Level 200]** As mentioned above, there is also the CDK option. In practice, CloudFormation templates tend to get quite large and hard to maintain, which is why we recommend using the CDK (it can be quite an enjoyable experience). Once you've got a feeling of the other services (especially serverless ones), tryout the [CDK Workshop](https://cdkworkshop.com/15-prerequisites.html) (we recommend the TypeScript flavor).

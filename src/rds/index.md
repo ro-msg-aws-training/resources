@@ -20,7 +20,7 @@ Another important tip is that you can reserve the RDS instance (just like EC2) t
 
 Before we go through some features of RDS, we must first be able to decide if we use RDS (i.e. a relational database). Relational databases are great for [OLTP](<https://database.guide/what-is-oltp/#:~:text=OLTP%20(Online%20Transactional%20Processing)%20is,a%20large%20number%20of%20users.>) as opposed to [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing). Take a quick look [here](https://www.guru99.com/oltp-vs-olap.html) to get an understanding of the differences between OLTP and OLAP.
 
-Generally, relational databases are great because of their querying capabilities (you can built some truly sophisticated queries and joins) and [ACID](https://en.wikipedia.org/wiki/ACID) transactions. Interestingly enough, these are also the main causes of their limitations such as high CPU-usage and scalability (they don't scale horizontally in general). However, it is a decent choice in most cases unless you are building the next facebook. And, of course, your system might use several database types at once (use the right tool for the job).
+Generally, relational databases are great because of their querying capabilities (you can built some truly sophisticated queries and joins) and [ACID](https://en.wikipedia.org/wiki/ACID) transactions. Interestingly enough, these are also the main causes of their limitations such as high CPU-usage and scalability (they don't scale horizontally in general). However, it is a decent choice in most cases unless you are building the next Facebook. And, of course, your system might use several database types at once (use the right tool for the job).
 
 **[Level 200]** For more information on how to choose the right database, check out [this amazing sales video](https://www.youtube.com/watch?v=hwnNbLXN4vA).
 
@@ -36,7 +36,7 @@ They can help with scalability issues for reading operations. The data is asynch
 
 ### 3. Multi-AZ
 
-You can choose to run the database in several AZs at once. This helps with availabity. If one AZ goes down, your connections are automatically switched to another AZ (i.e. you don't have to adapt your application).
+You can choose to run the database in several AZs at once. This helps with availability. If one AZ goes down, your connections are automatically switched to another AZ (i.e. you don't have to adapt your application).
 
 For more information regarding multi-AZ and read replicas check out [this](https://aws.amazon.com/rds/features/read-replicas/).
 

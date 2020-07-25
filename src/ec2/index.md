@@ -2,11 +2,11 @@
 
 EC2 is the workhorse of AWS and it's a good one. Lately, other services which abstract EC2 tend to be used/recommended more (Elastic Beanstalk, Lightsail, Fargate and others) however, having some experience with it will help you tremendously when working with other services and to better understand your architecture.
 
-The service ranges from very simple, where we just launch an instance and perform all the tasks manually by ssh-ing into it, to highly sophisticated where we can configure auto scaling groups based on custom AMIs behind load balancers while reducing costs by leveraging spot instances and savings plans (which supersed reserved instances in some ways, but not in others).
+The service ranges from very simple, where we just launch an instance and perform all the tasks manually by ssh-ing into it, to highly sophisticated where we can configure auto-scaling groups based on custom AMIs behind load balancers while reducing costs by leveraging spot instances and savings plans (which supersede reserved instances in some ways, but not in others).
 
 ## EC2 Instances
 
-Before we launch our own instance, let's discuss some important factors:
+Before we launch our instance, let's discuss some important factors:
 
 #### 1. Instance type (how big, for what and, of course, how much)
 
@@ -40,9 +40,9 @@ An instance can be in one of several states. The most important states are:
 
 An instance is basically just some virtual CPU and memory. If we want to do anything with it, we need some storage. Of course, all of them are documented [in the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html), but in short we have the following options:
 
-- **EBS** - You can see as an SSD/HDD (or even USB stick) that you can attach to an instance. It comes in [multiple options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html), but in most cases GP2 (general purpose) is enough. This is where the OS will be installed.
-- Instance Store - Blazing fast storage that is phisically attached to the host running the instance. It is intended only for temporary storage (**ephemeral** storage).
-- **EFS** - You can see as a network attached storage. Multiple instances from multiple AZs can connect to it (the connection is handled by an ENI).
+- **EBS** - You can see as an SSD/HDD (or even USB stick) that you can attach to an instance. It comes in [multiple options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html), but in most cases, GP2 (general purpose) is enough. This is where the OS will be installed.
+- Instance Store - Blazing fast storage that is physically attached to the host running the instance. It is intended only for temporary storage (**ephemeral** storage).
+- **EFS** - You can see it as a network-attached storage. Multiple instances from multiple AZs can connect to it (the connection is handled by an ENI).
 
 ## User Data and AMIs
 
@@ -54,20 +54,20 @@ Once your machine is in the state that you want, you can create an **AMI** (Amaz
 
 ## Auto Scaling Groups
 
-They can be seen as managers of your instances. You tell them what kind of instance you want and how many, and the ASG handles the rest. In practice, it is always recommended to use auto scaling groups even if you have just one instance.
+They can be seen as managers of your instances. You tell them what kind of instance you want and how many, and the ASG handles the rest. In practice, it is always recommended to use auto-scaling groups even if you have just one instance.
 
 ## Load Balancers (ELBs)
 
 The load balancer is usually the service that exposes our servers. We configure an ASG with a certain capacity (number of instances) and let the load balancer split the traffic between the instances. There are 2 types of ELBs:
 
 - **Application** - This is an actual proxy between the internet and your application. It receives a request from a client and makes another request (with the same data) to your application. It offers tons of features and it suits very well most cases. One important tip about it is that since the ALB creates another request, but, for some reason, you need the IP address of the original client, you can look at the request header _x-forwarded-for_.
-- **Network** - You can look at it like at a (very sophisticated) network router. While the ALB operates at layer 7 (HTTP, Websockets) of the [OSI model](https://en.wikipedia.org/wiki/OSI_model), the NLB handles traffic at layer 4 (TCP/UDP) thus working with packets. You loose some features of the ALB, but gain massive performance (**and scalability**) and the request looks like it came directly from the original client. Also, interestingly enough, it is (slightly) cheaper than an ALB (mostly because you have to configure it more).
+- **Network** - You can look at it like at a (very sophisticated) network router. While the ALB operates at layer 7 (HTTP, WebSockets) of the [OSI model](https://en.wikipedia.org/wiki/OSI_model), the NLB handles traffic at layer 4 (TCP/UDP) thus working with packets. You loose some features of the ALB, but gain massive performance (**and scalability**) and the request looks like it came directly from the original client. Also, interestingly enough, it is (slightly) cheaper than an ALB (mostly because you have to configure it more).
 - There is a third option, classic, but it's deprecated.
 
 ELBs offer tons of features which are great, but we won't go over them since setting up an ELB is such a rare task. However here are a few aspects to keep in mind:
 
 - The ELB offers a static DNS name that you are supposed to use (as opposed to an IP address).
-- It can be internet facing or internal (we might need load balancing between various tiers or services of our system).
+- It can be internet-facing or internal (we might need load balancing between various tiers or services of our system).
 - The ELB can check the health of your instances and forward the traffic only if the instance seems to be running (in practice, your application would have an endpoint responsible for responding to health checks - only the status code of the response is relevant, usually HTTP 200).
 - In case of an ALB, you can route traffic to different targets based on several URL components such as the hostname (_**a**.example.com_), path (_example.com/**a**_) and query strings (_example.com?**service=a**_).
 - If, for some reason, requests must go to exactly the same instance, you can use sticky session (it shouldn't happen).
@@ -93,7 +93,7 @@ Do you see any potential issue with our second architecture? (Think from a funct
 :::
 
 :::warning Exercise
-**[Level 200]** Your task is to get a web application running on your own EC2 instance while following the simple architecture from above. If you completed the [spring training](https://github.com/ro-msg-spring-training/resources), you can try with that (you might have install additional software like the jdk or the RDMS). The aim is to be able to call your application from your browser/postman.
+**[Level 200]** Your task is to get a web application running on your own EC2 instance while following the simple architecture from above. If you completed the [spring training](https://github.com/ro-msg-spring-training/resources), you can try with that (you might have install additional software like the JDK or the RDMS). The aim is to be able to call your application from your browser/postman.
 
 Tips: use git to pull the source code, use the connect button from the AWS console (you don't need to worry about the keypair - launch the instance without it) to ssh into your instance, don't forget about the security group for ssh and the port of your application.
 
