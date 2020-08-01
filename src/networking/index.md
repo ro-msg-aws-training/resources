@@ -64,3 +64,7 @@ In general, we deploy instances in private subnets and expose them through a Loa
 :::warning Exercise
 Navigate to the VPC service and take a look at the default VPC. How many subnets does it have and how many of them are public? Does it restrict traffic with any IP?
 :::
+
+### VPC & Managed AWS Services
+
+If EC2 instances run in a VPC, other AWS services don't. This is relevant since you will most likely use other AWS services such as S3. If your app running on EC2 wants to access some objects from S3, the traffic would leave your VPC and go through the public internet. This can vary from totally irrelevant (unlikely; if your application layer is in a private subnet, you already face an issue) to a total show stopper (e.g. due to legal restrictions not allowing public internet traffic). For this, AWS introduced [VPC endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html). Endpoints can also drastically reduce costs as presented [here](https://medium.com/nubego/how-to-save-money-with-aws-vpc-endpoints-9bac8ae1319c).

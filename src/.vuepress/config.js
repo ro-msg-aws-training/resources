@@ -76,12 +76,32 @@ module.exports = {
         path: '/s3/',
       },
       {
+        title: 'Containers',
+        path: '/containers/',
+      },
+      {
         title: 'Integration',
         path: '/integration/',
       },
       {
         title: 'Serverless',
         path: '/serverless/',
+      },
+      {
+        title: 'Lambda',
+        path: '/lambda/',
+      },
+      {
+        title: 'Cognito',
+        path: '/cognito/',
+      },
+      {
+        title: 'DynamoDB',
+        path: '/dynamo/',
+      },
+      {
+        title: 'API Gateway',
+        path: '/apigw/',
       },
     ],
   },

@@ -1,4 +1,4 @@
-# Elatic Compute Cloud (EC2)
+# Elastic Compute Cloud (EC2)
 
 EC2 is the workhorse of AWS and it's a good one. Lately, other services which abstract EC2 tend to be used/recommended more (Elastic Beanstalk, Lightsail, Fargate and others) however, having some experience with it will help you tremendously when working with other services and to better understand your architecture.
 
