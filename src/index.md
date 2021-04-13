@@ -84,7 +84,7 @@ We will see what are the resources and techniques used to secure systems running
 
 ### Networking
 
-A quick recap of networking concepts like (sub)networks, masks, CIDR etc. and why they are relevant in AWS.
+A quick recap of networking concepts like (sub)networks, masks, CIDR, etc., and why they are relevant in AWS.
 
 ---
 

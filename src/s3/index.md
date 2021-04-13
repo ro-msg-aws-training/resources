@@ -2,15 +2,15 @@
 
 ## Object Storage
 
-Chances are your product will use S3 one way or another. You might need to store some user files (e.g. profile picture), logs or documents (archive mostly for legal reasons).
+Chances are your product will use S3 one way or another. You might need to store some user files (e.g. profile picture), logs, or documents (archive mostly for legal reasons).
 
-S3 is another service that ranges from incredibly simple to highly sophisticated. You can simply dump some files into it and don't worry about them (which is what we recommend for data sets that range from 0 to 100s of GBs). Then, if you see the amount of data rapidly growing and/or run into more exotic requirements (versioning, encryption, prevent deletion etc), you should dive deeper into it.
+S3 is another service that ranges from incredibly simple to highly sophisticated. You can simply dump some files into it and don't worry about them (which is what we recommend for data sets that range from 0 to 100s of GBs). Then, if you see the amount of data rapidly growing and/or run into more exotic requirements (versioning, encryption, prevent deletion, etc), you should dive deeper into it.
 
 There are a few aspects that are important to understand:
 
 - You work with S3 through HTTP(S). If you read a file, you perform a GET, if you upload a file, you perform a POST.
-- Files/**objects** are stored in so-called buckets. These are basically globally unique internet containers (each bucket has its own URL - this is why the bucket name must be **globally unique**). You should use one bucket per use case - e.g. one bucket for user files, another bucket for backups and so on (to make your life easier).
-- Theoretically S3 is just a key-value storage system. The key is the complete path to the object and the value is the object itself. On the same idea, you cannot partially change an object. If you make a small change, you upload the whole file and replace the previous one.
+- Files/**objects** are stored in so-called buckets. These are basically globally unique internet containers (each bucket has its own URL - this is why the bucket name must be **globally unique**). You should use one bucket per use case - e.g. one bucket for user files, another bucket for backups, and so on (to make your life easier).
+- Theoretically, S3 is just a key-value storage system. The key is the complete path to the object and the value is the object itself. On the same idea, you cannot partially change an object. If you make a small change, you upload the whole file and replace the previous one.
 - Usually your application uploads files to S3 (using either the SDK or the REST API - SDK is recommended) then it stores the metadata (e.g. object key/name) into your DB.
 - Take [CORS](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) into consideration for media content sharing (e.g. user profile pictures).
 
@@ -18,11 +18,11 @@ There are a few aspects that are important to understand:
 Follow the [getting started guide](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html). When the tutorial asks you to view the object in your browser, take a few seconds to inspect the URL.
 :::
 
-**[Level 200]** For a more detail view, feel free to checkout the [S3 Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html).
+**[Level 200]** For a more detailed view, feel free to check out the [S3 Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html).
 
 ## Hosting
 
-Since each bucket is already accessible over HTTP, AWS took it one step further and allowed us to transform buckets into static website servers. If your website/web app consists of HTML, JS and CS files (as opposed to a WordPress site which requires an actual computer to execute PHP code), you can use S3 to directly serve it to your users. Basically you just have to tell S3 which is the root/index file of your website to know what to serve when the users reach the URL of your bucket. In practice you will have to also use CloudFront in order to have HTTPS which is why we recommend S3 for hosting only for development or PoC purposes.
+Since each bucket is already accessible over HTTP, AWS took it one step further and allowed us to transform buckets into static website servers. If your website/web app consists of HTML, JS, and CS files (as opposed to a WordPress site that requires an actual computer to execute PHP code), you can use S3 to directly serve it to your users. Basically, you just have to tell S3 which is the root/index file of your website to know what to serve when the users reach the URL of your bucket. In practice, you will have to also use CloudFront in order to have HTTPS which is why we recommend S3 for hosting only for development or PoC purposes.
 
 ## Pre-Signed URLs
 
@@ -38,4 +38,4 @@ Another important aspect is that once a request reaches a CloudFront's location,
 **[Level 300]** For more information on how CloudFront can improve performance (including tinder's performance) see [this video](https://www.youtube.com/watch?v=DeygvViFlXQ).
 :::
 
-For any other information, checkout the [CloudFront FAQ](https://aws.amazon.com/cloudfront/faqs/).
+For any other information, check out the [CloudFront FAQ](https://aws.amazon.com/cloudfront/faqs/).

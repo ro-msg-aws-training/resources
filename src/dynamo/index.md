@@ -1,6 +1,6 @@
 # DynamoDB
 
-In short, DynamoDB is what most large platforms use (e.g. uber, tinder) due to its ability to scale. Use it when you need consistent performance even at huge scale (however, keep in mind to use distributed keys to avoid hot partitions).
+In short, DynamoDB is what most large platforms use (e.g. uber, tinder) due to its ability to scale. Use it when you need consistent performance even at a huge scale (however, keep in mind to use distributed keys to avoid hot partitions).
 
 There are already great resources to learn DynamoDB such as:
 

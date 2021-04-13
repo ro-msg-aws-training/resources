@@ -7,4 +7,4 @@ You can find out more about the history of AWS in this [TechCrunch article](http
 :::
 
 It took several years for any competitor to respond which translated to an overwhelming market share owned by AWS even today and to more mature services.  
-It currently offers over 200 services for various use cases (hosting, AI, ML, IoT, media encoding and streaming etc.). Some of them are very specific to a certain use case while others are more general and most likely are the building blocks of the rest. We will focus on the latter.
+It currently offers over 200 services for various use cases (hosting, AI, ML, IoT, media encoding and streaming, etc.). Some of them are very specific to a certain use case while others are more general and most likely are the building blocks of the rest. We will focus on the latter.
