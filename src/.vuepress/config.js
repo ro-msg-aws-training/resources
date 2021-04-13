@@ -44,12 +44,12 @@ module.exports = {
         path: '/services/',
       },
       {
-        title: 'Infrastructure as Code',
-        path: '/iac/',
-      },
-      {
         title: 'Regions and AZs',
         path: '/infra/',
+      },
+      {
+        title: 'Infrastructure as Code',
+        path: '/iac/',
       },
       {
         title: 'IAM',
