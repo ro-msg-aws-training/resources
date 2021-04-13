@@ -14,6 +14,10 @@ One important characteristic of CloudFormation is that it works with **stacks**.
 
 We will see more CloudFormation in the following chapters. For now, it is enough if you understand its basic structure. Moreover, AWS also offers its **CDK** (Cloud Development Kit). With it, we can write actual code in several languages (spoiler: we will use TypeScript) (using actual programming paradigms) and let the CLI generate the corresponding CloudFormation.
 
+:::tip CDK Tutorial
+You can check out [Andrei's video](https://www.youtube.com/watch?v=XUSP9_j749Q&ab_channel=AndreiStefanie) on deploying a classic application (ALB, EC2, RDS) using CDK.
+:::
+
 First of all, templates are written in JSON or YAML. We (and the rest of the world) will use YAML since it is considerably easier to read and understand. If you are not familiar with YAML, take a few minutes to get a grasp of it. [This post](https://dev.to/paulasantamaria/introduction-to-yaml-125f) should be more than enough for now.
 
 Templates can contain 5 main types of definitions: resources, parameters, mappings, conditions, and outputs.
@@ -72,6 +76,6 @@ If parameters are intended for customizing based on outside/user (developer) inp
 
 The primary usage of the outputs is to act as the input of another template. Of course, we can also display them once our template is executed.
 
-## Further Exercise
+## Further Exercises
 
 **[Level 200]** As mentioned above, there is also the CDK option. In practice, CloudFormation templates tend to get quite large and hard to maintain, which is why we recommend using the CDK (it can be quite an enjoyable experience). Once you've got a feeling of the other services (especially serverless ones), try out the [CDK Workshop](https://cdkworkshop.com/15-prerequisites.html) (we recommend the TypeScript flavor).
